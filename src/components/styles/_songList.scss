@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Explora&family=Merriweather:wght@300&display=swap");
+.song-list {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 20vw;
+  height: 100vh;
+  background-color: rgb(160, 160, 162);
+  box-shadow: 2px 2px 50px rgb(85, 85, 86);
+  overflow: scroll;
+  transition: all 1s linear;
+  h2 {
+    padding: 1vw;
+    text-align: center;
+    font-family: "Merriweather", serif;
+  }
+}
+.song-list-item {
+  display: flex;
+  flex-direction: column;
+  padding: 1vw;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 40%;
+  }
+}
+.song-item {
+  display: flex;
+  margin-top: 2vh;
+  cursor: pointer;
+  &:hover {
+    background-color: rgb(251, 251, 255);
+  }
+}
+.song-description {
+  padding-left: 1vw;
+  h3 {
+    font-size: 1rem;
+    margin-bottom: 1vh;
+
+    font-family: "Merriweather", serif;
+  }
+  h4 {
+    font-size: 0.7rem;
+    font-family: "Merriweather", serif;
+  }
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(115, 115, 115, 0.5) transparent;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  scrollbar-color: rgba(115, 115, 115, 0.5);
+  border-radius: 20px;
+}
+.selected {
+  background-color: rgb(204, 217, 213);
+}
+.dispalyList{
+  transform: translateX(-30vw);
+}
+@media screen and(max-width:768px) {
+  .song-list{
+    width: 100vw;
+  }
+  .dispalyList{
+    transform: translateX(-100vw);
+  }
+  
+}

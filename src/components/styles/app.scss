@@ -1,0 +1,10 @@
+* {
+  margin: 50;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import "./play";
+@import "./song";
+@import './songList';
+@import './toggleList'
