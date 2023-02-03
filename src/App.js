@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./components/styles/app.scss";
+import Play from "./components/Play";
+import Song from "./components/Song";
+import { musicData } from "./data";
+import { useState } from "react";
+import SongsList from "./components/SongsList";
+import ToggleList from "./components/ToggleList";
 
 function App() {
+  const [songs, setSongs] = useState(musicData());
+  const [currentSong, setCurrentSongs] = useState(songs[0]);
+  const [isPlaying, setIsPlaying] = useState(songs[0]);
+  const [display, setDisplay] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ToggleList setDisplay={setDisplay} display={display} />
+
+      <Song currentSong={currentSong} />
+      <Play
+        currentSong={currentSong}
+        isPlaying={isPlaying}
+        setIsPlaying={setIsPlaying}
+        songs={songs}
+        setCurrentSongs={setCurrentSongs}
+        setSongs={setSongs}
+      />
+      <SongsList
+        songs={songs}
+        setCurrentSongs={setCurrentSongs}
+        setSongs={setSongs}
+        display={display}
+      />
     </div>
   );
 }
